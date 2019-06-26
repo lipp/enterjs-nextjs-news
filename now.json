@@ -1,0 +1,21 @@
+{
+    "version": 2,
+    "alias": "enterjs-news.lipp.dev",
+    "name": "enterjs-news",
+    "regions": ["cdg1", "bru1"],
+    "builds": [{
+        "src": "next.config.js",
+        "use": "@now/next"
+    }],
+    "routes": [{
+        "src": "/article.*",
+        "headers": {
+            "Cache-Control": "s-maxage=100000, max-age=100000"
+        }
+    }, {
+        "src": "/headlines.*",
+        "headers": {
+            "Cache-Control": "s-maxage=120, max-age=120"
+        }
+    }]
+}
